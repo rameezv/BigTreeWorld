@@ -8,4 +8,9 @@ body, html {
     margin: 0;
     padding: 0;
     background-color: material-color('grey', '100');
+    overflow-x: hidden;
+}
+
+div {
+    box-sizing: border-box;
 }
