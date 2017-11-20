@@ -1,3 +1,5 @@
+@import 'node_modules/sass-material-colors/sass/sass-material-colors';
+
 .header-bar {
     width: 100%;
     display: flex;
@@ -5,14 +7,47 @@
     height: 50px;
     padding: 0 20px;
     align-items: center;
-    background-color: #ffffff;
+    background-color: rgba(255, 255, 255, 1);;
     color: #000000;
-    box-shadow: 0 3px 3px 0 rgba(0, 0, 0 ,0.2);
+    box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.2);
     z-index: 10;
     position: fixed;
     top: 0;
+    transition: background-color 0.5s ease-in-out, 
+        color 0.5s ease-in-out, 
+        height 0.5s ease-in-out, 
+        background-color 0.5s ease-in-out;
     .logo {
         font-weight: 700;
         font-size: 24px;
+        margin: 0 0;
+        text-shadow: none;
+        display: flex;
+        align-items: center;
+        transition: text-shadow 0.5s ease-in-out, 
+            font-size 0.5s ease-in-out;
+        img {
+            width: 42px;
+            height: 42px;
+            margin-right: 10px;
+            transition: width 0.5s ease-in-out,
+                margin-right 0.5s ease-in-out,
+                height 0.5s ease-in-out;
+        }
+    }
+    &.inverted {
+        background-color: rgba(255, 255, 255, 0);
+        color: #ffffff;
+        box-shadow: none;
+        height: 100px;
+        .logo {
+            text-shadow: 0 2px 1px material-color('grey', '900');
+            font-size: 32px;
+            img {
+                width: 54px;
+                height: 54px;
+                margin-right: 20px;
+            }
+        }
     }
 }

@@ -7,11 +7,12 @@
     background-image: url('/assets/images/modern-web.jpg');
     background-size: cover;
     background-position: center center;
-    margin-top: 50px;
     display: flex;
     align-items: center;
     justify-content: flex-start;
     color: material-color('grey', '200');
     padding: 20px;
     text-shadow: 0 2px 2px material-color('grey', '900');
+    box-shadow: 0 3px 3px 0 rgba(0, 0, 0 ,0.2);
+    font-size: 1.5rem;
 }

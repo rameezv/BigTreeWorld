@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-header-bar',
@@ -7,9 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderBarComponent implements OnInit {
 
-  constructor() { }
+  private inverted = true;
+  @Input() invertPosition = 0;
 
   ngOnInit() {
+    window.addEventListener('scroll', () => {
+      this.inverted = window.pageYOffset === this.invertPosition;
+    });
+  }
+
+  get invertHeader() {
+    return this.inverted;
   }
 
 }
