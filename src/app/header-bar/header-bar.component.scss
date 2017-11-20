@@ -27,11 +27,14 @@
         transition: text-shadow 0.5s ease-in-out, 
             font-size 0.5s ease-in-out;
         img {
-            width: 42px;
-            height: 42px;
+            width: 36px;
+            height: 36px;
             margin-right: 10px;
+            border-radius: 100%;
+            box-shadow: none;
             transition: width 0.5s ease-in-out,
                 margin-right 0.5s ease-in-out,
+                box-shadow 0.5s ease-in-out,
                 height 0.5s ease-in-out;
         }
     }
@@ -44,9 +47,10 @@
             text-shadow: 0 2px 1px material-color('grey', '900');
             font-size: 32px;
             img {
-                width: 54px;
-                height: 54px;
+                width: 48px;
+                height: 48px;
                 margin-right: 20px;
+                box-shadow: 0 2px 1px material-color('grey', '900');
             }
         }
     }
