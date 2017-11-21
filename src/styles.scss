@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700');
 @import 'node_modules/sass-material-colors/sass/sass-material-colors';
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
 body, html {
     width: 100%;
@@ -9,6 +10,7 @@ body, html {
     padding: 0;
     background-color: material-color('grey', '100');
     overflow-x: hidden;
+    min-width: 380px;
 }
 
 div {
