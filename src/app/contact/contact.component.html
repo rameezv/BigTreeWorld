@@ -1,0 +1,21 @@
+<mat-card>
+  <mat-card-title>Contact Us</mat-card-title>
+  <mat-card-content>
+    Use the form below to receive a free estimate or to chat about a potential project.
+    <form [formGroup]="form">
+      <mat-form-field>
+        <input matInput placeholder="Name" formControlName="name" />
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Email" formControlName="email" />
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Phone Number" formControlName="phone" />
+      </mat-form-field>
+      <mat-form-field>
+        <textarea matInput placeholder="Message" formControlName="message"></textarea>
+      </mat-form-field>
+      <button mat-raised-button color="primary">Send</button>
+    </form>
+  </mat-card-content>
+</mat-card>

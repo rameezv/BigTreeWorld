@@ -1,0 +1,14 @@
+mat-card {
+  width: 60%;
+  margin: 20px auto;
+  @media screen and (max-width: 1000px) {
+    width: 85%;
+  }
+  mat-card-content {
+    form {
+      display: flex;
+      flex-flow: column nowrap;
+      align-items: flex-start;
+    }
+  }
+}
