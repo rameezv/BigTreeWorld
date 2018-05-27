@@ -1,27 +1,30 @@
 mat-card.container {
-    width: 60%;
-    margin: 20px auto;
+  width: 60%;
+  margin: 20px auto;
+  @media screen and (max-width: 1000px) {
+    width: 85%;
+  }
+  .projects-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
     @media screen and (max-width: 1000px) {
-        width: 85%;
+      flex-flow: row wrap;
     }
-    .projects-container {
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: space-around;
-        @media screen and (max-width: 1000px) {
-            flex-flow: row wrap;
+    .project {
+      margin: 5px;
+      min-width: 200px;
+      max-width: 500px;
+      width: calc(33% - 10px);
+      flex: 1 0;
+      mat-card {
+        mat-card-actions {
+          text-align: right;
+          a {
+            border-radius: 20px;
+          }
         }
-        .project {
-            margin: 5px;
-            min-width: 200px;
-            max-width: 500px;
-            width: calc(33% - 10px);
-            flex: 1 0;
-            mat-card {
-                mat-card-actions {
-                    text-align: right;
-                }
-            }
-        }
+      }
     }
+  }
 }

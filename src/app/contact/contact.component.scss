@@ -1,6 +1,13 @@
+@import '../styles/bounded_inputs';
+
+@include bounded_inputs();
+
 mat-card {
   width: 60%;
   margin: 20px auto;
+  background: transparent;
+  box-shadow: none !important;
+  text-align: center;
   @media screen and (max-width: 1000px) {
     width: 85%;
   }
@@ -8,7 +15,16 @@ mat-card {
     form {
       display: flex;
       flex-flow: column nowrap;
-      align-items: flex-start;
+      align-items: center;
+      margin: 20px 0;
+      mat-form-field {
+        max-width: 500px;
+        width: 100%;
+      }
+      button {
+        margin-top: 10px;
+        border-radius: 20px;
+      }
     }
   }
 }

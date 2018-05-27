@@ -1,0 +1,59 @@
+$white: #fff;
+$light-gray: #ddd;
+$lighter-gray: #eaeaea;
+
+$cb-transition: .4s cubic-bezier(.25,.8,.25,1);
+
+@mixin bounded-inputs() {
+  ::ng-deep mat-form-field {
+    .mat-input-wrapper {
+      padding-bottom: 5px;
+    }
+    .mat-input-flex {
+      border: 1px solid $light-gray;
+      border-radius: 20px;
+      padding: 5px 10px 0;
+      background-color: $white;
+      .mat-input-infix {
+        .mat-input-placeholder-wrapper {
+          transition: transform $cb-transition;
+          label {
+            transform: perspective(100px) translateY(-0.41185em);
+          }
+        }
+        mat-select {
+          .mat-select-trigger {
+            .mat-select-arrow-wrapper {
+              position: relative;
+              top: -0.41185em;
+            }
+          }
+        }
+      }
+    }
+    .mat-input-underline {
+      background-color: transparent;
+      width: calc(100% - 28px);
+      margin-left: 14px;
+      margin-bottom: -13px;
+      .mat-input-ripple {
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+      }
+    }
+    &.mat-form-field-disabled {
+      .mat-input-flex {
+        background-color: $lighter-gray;
+      }
+    }
+    &.mat-form-field-should-float {
+      .mat-input-flex {
+        .mat-input-placeholder-wrapper {
+          label {
+            transform: translateY(-1.28125em) scale(0.75) perspective(100px) translateZ(0.001px);
+          }
+        }
+      }
+    }
+  }
+}
