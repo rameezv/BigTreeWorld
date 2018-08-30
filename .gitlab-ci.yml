@@ -12,6 +12,7 @@ build:
       - node_modules/
   artifacts:
     paths:
+      - node_modules/
       - dist/
 
 deploy:
