@@ -27,5 +27,5 @@ deploy:
     - cd dist
     - ls
     - echo "Running curl to upload files via FTP"
-    - find . -name '*' -type f -exec curl -u ci@bigtreeworld.com:0rthanc93 --ftp-create-dirs -T {} ftp://ftp.bigtreeworld.com/{} \;
+    - find . -name '*' -type f -exec curl -u $FTP_USERNAME:$FTP_PASSWORD --ftp-create-dirs -T {} ftp://ftp.bigtreeworld.com/{} \;
 
