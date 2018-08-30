@@ -1,6 +1,6 @@
 build:
   image: node:latest
-  stage: test
+  stage: build
   only:
     - master
   before_script:
