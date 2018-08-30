@@ -7,6 +7,9 @@ build:
     - npm install
   script:
     - npm run build
+  cache:
+    paths:
+      - node_modules/
   artifacts:
     paths:
       - dist/
