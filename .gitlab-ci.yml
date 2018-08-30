@@ -9,24 +9,19 @@ build:
     - npm run build
   artifacts:
     paths:
-      - node_modules/
       - dist/
 
 deploy:
-  image: instrumentisto/rsync-ssh:latest
+  image: debian:stable
   stage: deploy
-  environment: Production
   only:
     - master
   dependencies:
     - build
-  before_script:
-    - mkdir -p "${HOME}/.ssh"
-    - chmod 700 "${HOME}/.ssh"
-    - echo "${DEPLOY_SSH_PRIV_KEY}" > "${HOME}/.ssh/id_rsa"
-    - chmod 600 "${HOME}/.ssh/id_rsa"
   script:
-    - echo "do ssh here"
+    - echo "Generated bundles and assets to upload:"
     - cd dist && ls
+    - echo "Running curl to upload files via FTP"
+    - cd dist && curl -T * ftp://ci@bigtreeworld.com:0rthanc93@ftp.bigtreeworld.com
 
 
