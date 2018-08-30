@@ -1,0 +1,32 @@
+build:
+  image: node:latest
+  stage: test
+  only:
+    - master
+  before_script:
+    - npm install
+  script:
+    - npm run build
+  artifacts:
+    paths:
+      - node_modules/
+      - dist/
+
+deploy:
+  image: instrumentisto/rsync-ssh:latest
+  stage: deploy
+  environment: Production
+  only:
+    - master
+  dependencies:
+    - build
+  before_script:
+    - mkdir -p "${HOME}/.ssh"
+    - chmod 700 "${HOME}/.ssh"
+    - echo "${DEPLOY_SSH_PRIV_KEY}" > "${HOME}/.ssh/id_rsa"
+    - chmod 600 "${HOME}/.ssh/id_rsa"
+  script:
+    - echo "do ssh here"
+    - cd dist && ls
+
+
