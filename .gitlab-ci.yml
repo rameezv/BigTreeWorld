@@ -23,8 +23,9 @@ deploy:
     - build
   script:
     - echo "Generated bundles and assets to upload:"
-    - cd dist && ls
+    - cd dist
+    - ls
     - echo "Running curl to upload files via FTP"
-    - cd dist && curl -T * ftp://ci@bigtreeworld.com:0rthanc93@ftp.bigtreeworld.com
+    - curl -T * ftp://ci@bigtreeworld.com:0rthanc93@ftp.bigtreeworld.com
 
 
