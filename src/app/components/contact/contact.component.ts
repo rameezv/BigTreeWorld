@@ -32,7 +32,10 @@ export class ContactComponent implements OnInit {
         this.form.value['name'],
         this.form.value['message'],
         this.form.value['phone']
-      ).subscribe(null, err => {
+      ).subscribe(() => {
+        this.snackBar.open('Message sent! We will try to get back to you within 48 hours.');
+        this.form.reset();
+      }, err => {
         this.snackBar.open('There was an unknown error submitting the form.\
          If this problem persists, please shoot an email to contact@bigtreeworld.com', null, {duration: 5000});
       });

@@ -30,7 +30,7 @@ export class ContactService {
     };
     const bodyJson = Object.keys(body).map(k => `${encodeURIComponent(k)}=${encodeURIComponent(body[k])}`).join('&');
     let headers = new HttpHeaders();
-    headers = headers.append('Authorization', 'Basic YXBpOjYzMzI5ZTRlZDE4ZmJjMDhhZDhlMjc4ZDAyYjljNTg3LWM5MjcwYzk3LTExODk0OWNl');
+    headers = headers.append('Authorization', 'Basic YXBpOmtleS1lYTFlNTExZTMwM2FmOWY4YmNjODIxMGYzOGRhNjUwYg==');
     headers = headers.append('Content-Type', 'application/x-www-form-urlencoded');
     return this.http.post(`${this.apiBaseUrl}/messages`, bodyJson, {headers: headers});
   }
