@@ -14,7 +14,7 @@
       </div>
       <div class="description" [ngClass]="{'expanded': service.selected}">
         <p>{{ service.description }}</p>
-        <a mat-raised-button>Get a free estimate!</a>
+        <a mat-raised-button (click)="scrollToContactForm()">Get a free estimate!</a>
       </div>
     </div>
   </div>

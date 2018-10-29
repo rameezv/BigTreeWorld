@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { getBodyNode } from '@angular/animations/browser/src/render/shared';
 
 @Component({
   selector: 'app-services',
@@ -33,6 +34,13 @@ export class  ServicesComponent {
       description: 'Lorem Ipsum'
     }
   ];
+
+  scrollToContactForm() {
+    const contactForm = document.querySelector('#contact-form');
+    if (contactForm) {
+      contactForm.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
 }
 
 interface Service {
