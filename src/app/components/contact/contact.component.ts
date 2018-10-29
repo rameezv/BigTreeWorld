@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 import { ContactService } from '../../services/contact/contact.service';
+import { MatSnackBar } from '@angular/material';
 
 @Component({
   selector: 'app-contact-us',
@@ -12,7 +13,7 @@ export class ContactComponent implements OnInit {
   reCaptchaSiteKeyEncrypted = 'NkxjclZYY1VBQUFBQVAxWTlhMXpxTHBmc1FxVXJNNTlERF9Tclc0YQ==';
   reCaptchaSiteKey: string;
 
-  constructor(private fb: FormBuilder, private contactService: ContactService) {}
+  constructor(private fb: FormBuilder, private contactService: ContactService, private snackBar: MatSnackBar) {}
   ngOnInit() {
     this.reCaptchaSiteKey = window.atob(this.reCaptchaSiteKeyEncrypted);
     this.form = this.fb.group({
@@ -31,9 +32,12 @@ export class ContactComponent implements OnInit {
         this.form.value['name'],
         this.form.value['message'],
         this.form.value['phone']
-      ).subscribe(console.log);
+      ).subscribe(null, err => {
+        this.snackBar.open('There was an unknown error submitting the form.\
+         If this problem persists, please shoot an email to contact@bigtreeworld.com', null, {duration: 2000});
+      });
     } else {
-      window.alert('Not valid');
+      this.snackBar.open('Please make sure all fields are valid!', null, {duration: 2000});
     }
   }
 }
