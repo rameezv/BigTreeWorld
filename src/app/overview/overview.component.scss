@@ -1,19 +1,19 @@
-@import 'node_modules/sass-material-colors/sass/sass-material-colors';
+@import '~@angular/material/theming';
 
 .overview-section {
   z-index: 5;
   height: 500px;
   width: 100%;
-  background-color: material-color('grey', '900');
+  background-color: mat-color($mat-grey, 900);
   background-image: url('/assets/images/modern-web.jpg');
   background-size: cover;
   background-position: center center;
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  color: material-color('grey', '200');
+  color: mat-color($mat-grey, 200);
   padding: 20px;
-  text-shadow: 0 2px 2px material-color('grey', '900');
+  text-shadow: 0 2px 2px mat-color($mat-grey, 900);
   box-shadow: 0 3px 3px 0 rgba(0, 0, 0 ,0.2);
   font-size: 1.5rem;
   @media screen and (max-width: 700px) {

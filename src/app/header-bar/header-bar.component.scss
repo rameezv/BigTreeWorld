@@ -1,4 +1,4 @@
-@import 'node_modules/sass-material-colors/sass/sass-material-colors';
+@import '~@angular/material/theming';
 
 .header-bar {
     width: 100%;
@@ -13,9 +13,9 @@
     z-index: 10;
     position: fixed;
     top: -1px;
-    transition: background-color 0.5s ease-in-out, 
-        color 0.5s ease-in-out, 
-        height 0.5s ease-in-out, 
+    transition: background-color 0.5s ease-in-out,
+        color 0.5s ease-in-out,
+        height 0.5s ease-in-out,
         background-color 0.5s ease-in-out;
     .logo {
         font-weight: 700;
@@ -24,7 +24,7 @@
         text-shadow: none;
         display: flex;
         align-items: center;
-        transition: text-shadow 0.5s ease-in-out, 
+        transition: text-shadow 0.5s ease-in-out,
             font-size 0.5s ease-in-out;
         img {
             width: 36px;
@@ -44,13 +44,13 @@
         box-shadow: none;
         height: 100px;
         .logo {
-            text-shadow: 0 2px 1px material-color('grey', '900');
+            text-shadow: 0 2px 1px mat-color($mat-grey, 900);
             font-size: 32px;
             img {
                 width: 48px;
                 height: 48px;
                 margin-right: 20px;
-                box-shadow: 0 2px 1px material-color('grey', '900');
+                box-shadow: 0 2px 1px mat-color($mat-grey, 900);
             }
         }
     }
