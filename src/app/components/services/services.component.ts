@@ -26,6 +26,11 @@ export class  ServicesComponent {
       name: 'Workflow Automation',
       icon: 'compare_arrows',
       description: 'Lorem Ipsum'
+    },
+    {
+      name: 'Search Engine Optimization (SEO)',
+      icon: 'search',
+      description: 'Lorem Ipsum'
     }
   ];
 }
