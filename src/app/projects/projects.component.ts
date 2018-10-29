@@ -12,19 +12,19 @@ export class ProjectsComponent implements OnInit {
       title: 'Create Cafe 3D Printing',
       url: 'http://createcafe.ca',
       imageUrl: '/assets/images/modern-web.jpg',
-      description: ''
+      description: 'Lorem Ipsum Dolor Sit Amet'
     },
     {
       title: 'Create Cafe 3D Printing',
       url: 'http://createcafe.ca',
       imageUrl: '/assets/images/modern-web.jpg',
-      description: ''
+      description: 'Lorem Ipsum Dolor Sit Amet'
     },
     {
       title: 'Create Cafe 3D Printing',
       url: 'http://createcafe.ca',
       imageUrl: '/assets/images/modern-web.jpg',
-      description: ''
+      description: 'Lorem Ipsum Dolor Sit Amet'
     }
   ];
 

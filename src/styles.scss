@@ -1,6 +1,6 @@
 @import './assets/fonts/metropolis/stylesheet.scss';
 @import 'node_modules/sass-material-colors/sass/sass-material-colors';
-@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+@import './assets/material-theme.scss';
 
 body, html {
     width: 100%;
