@@ -1,0 +1,16 @@
+<div class="service-container">
+  <h2>Services</h2>
+  <div class="services">
+    <div *ngFor="let service of services" class="service">
+      <div class="header" (click)="service.selected = service.selected ? false : true">
+        <mat-icon class="service-icon">{{ service.icon }}</mat-icon>
+        <h3>{{ service.name }}</h3>
+        <mat-icon>{{ service.selected ? 'arrow_drop_up' : 'arrow_drop_down' }}</mat-icon>
+      </div>
+      <div class="description" [ngClass]="{'expanded': service.selected}">
+        <p>{{ service.description }}</p>
+        <a mat-raised-button>Get a free estimate!</a>
+      </div>
+    </div>
+  </div>
+</div>
