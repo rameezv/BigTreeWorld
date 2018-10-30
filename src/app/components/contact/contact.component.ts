@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, FormControl, Validators, FormGroupDirective } from '@angular/forms';
 import { ContactService } from '../../services/contact/contact.service';
 import { MatSnackBar } from '@angular/material';
 
@@ -12,6 +12,7 @@ export class ContactComponent implements OnInit {
   form: FormGroup;
   reCaptchaSiteKeyEncrypted = 'NkxjclZYY1VBQUFBQVAxWTlhMXpxTHBmc1FxVXJNNTlERF9Tclc0YQ==';
   reCaptchaSiteKey: string;
+  formSubmitting = false;
 
   constructor(private fb: FormBuilder, private contactService: ContactService, private snackBar: MatSnackBar) {}
   ngOnInit() {
@@ -27,6 +28,7 @@ export class ContactComponent implements OnInit {
 
   sendMessage() {
     if (this.form.valid) {
+      this.formSubmitting = true;
       this.contactService.sendMessage(
         this.form.value['email'],
         this.form.value['name'],
@@ -35,10 +37,13 @@ export class ContactComponent implements OnInit {
       ).subscribe(() => {
         this.snackBar.open('Message sent! We will try to get back to you within 48 hours.');
         this.form.reset();
+        this.form.markAsPristine();
+        this.formSubmitting = false;
       }, err => {
         console.error(err);
         this.snackBar.open('There was an unknown error submitting the form.\
          If this problem persists, please shoot an email to contact@bigtreeworld.com', null, {duration: 5000});
+        this.formSubmitting = false;
       });
     } else {
       this.snackBar.open('Please make sure all fields are valid!', null, {duration: 2000});

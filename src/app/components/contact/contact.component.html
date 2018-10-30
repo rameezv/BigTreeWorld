@@ -27,7 +27,7 @@
         formControlName="recaptcha"
         [siteKey]="reCaptchaSiteKey"
       ></re-captcha>
-      <button mat-raised-button color="primary" (click)="sendMessage()">Send</button>
+      <button mat-raised-button color="primary" [disabled]="form.invalid || formSubmitting" (click)="sendMessage()">Send</button>
     </form>
   </div>
 </div>
