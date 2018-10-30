@@ -1,13 +1,16 @@
-build:
-  image: rambabusaravanan/firebase
+deploy:
+  image: node:latest
   stage: deploy
   only:
     - master
-  before_script:
-    - npm install
   script:
+    - npm install -g firebase-tools
+    - npm install
     - npm run build:prod
     - firebase deploy --token $FIREBASE_DEPLOY_KEY
+  cache:
+    paths:
+      - node_modules/
 
 # deploy:
 #   image: node:latest
