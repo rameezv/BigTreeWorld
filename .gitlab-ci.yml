@@ -8,9 +8,6 @@ build:
   script:
     - npm run build:prod
     - firebase deploy --token $FIREBASE_DEPLOY_KEY
-  cache:
-    paths:
-      - node_modules/
 
 # deploy:
 #   image: node:latest
