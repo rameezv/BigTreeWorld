@@ -35,7 +35,7 @@ export class ContactComponent implements OnInit {
         this.form.value['message'],
         this.form.value['phone']
       ).subscribe(() => {
-        this.snackBar.open('Message sent! We will try to get back to you within 48 hours.');
+        this.snackBar.open('Message sent! We will try to get back to you within 48 hours.', null, {duration: 3000});
         this.form.reset();
         this.form.markAsPristine();
         this.formSubmitting = false;
