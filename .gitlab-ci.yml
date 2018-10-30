@@ -6,7 +6,7 @@ deploy:
   script:
     - npm install -g firebase-tools
     - npm config set -g production false
-    - npm install
+    - npm ci
     - npm run build:prod
     - firebase deploy --token $FIREBASE_DEPLOY_KEY
   cache:
