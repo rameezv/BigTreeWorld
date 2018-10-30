@@ -1,12 +1,11 @@
 build:
-  image: devillex/docker-firebase
+  image: rambabusaravanan/firebase
   stage: deploy
   only:
     - master
   before_script:
     - npm install
   script:
-    - npm rebuild node-sass
     - npm run build:prod
     - firebase deploy --token $FIREBASE_DEPLOY_KEY
   cache:
