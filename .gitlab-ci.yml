@@ -8,7 +8,7 @@ deploy:
     - npm install
     - npm run build:prod
     - cd functions
-    - npm instal
+    - npm install
     - cd ..
     - firebase deploy --token $FIREBASE_DEPLOY_KEY
   cache:
