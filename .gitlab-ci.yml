@@ -6,7 +6,7 @@ build:
   before_script:
     - npm install
   script:
-    - npm run build
+    - npm run build-prod
   cache:
     paths:
       - node_modules/
@@ -15,17 +15,30 @@ build:
       - node_modules/
       - dist/
 
-deploy:
-  image: appropriate/curl:latest
-  stage: deploy
+build:
+  image: node:latest
+  stage: build
   only:
     - master
   dependencies:
     - build
   script:
-    - echo "Generated bundles and assets to upload:"
-    - cd dist
-    - ls
-    - echo "Running curl to upload files via FTP"
-    - find . -name '*' -type f -exec curl -u $FTP_USERNAME:$FTP_PASSWORD --ftp-create-dirs -T {} ftp://ftp.bigtreeworld.com/{} \;
+    - npm run deploy
+  cache:
+    paths:
+      - node_modules/
+      - dist/
 
+# deploy:
+#   image: appropriate/curl:latest
+#   stage: deploy
+#   only:
+#     - master
+#   dependencies:
+#     - build
+#   script:
+#     - echo "Generated bundles and assets to upload:"
+#     - cd dist
+#     - ls
+#     - echo "Running curl to upload files via FTP"
+#     - find . -name '*' -type f -exec curl -u $FTP_USERNAME:$FTP_PASSWORD --ftp-create-dirs -T {} ftp://ftp.bigtreeworld.com/{} \;
