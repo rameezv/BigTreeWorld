@@ -36,6 +36,7 @@ export class ContactComponent implements OnInit {
         this.snackBar.open('Message sent! We will try to get back to you within 48 hours.');
         this.form.reset();
       }, err => {
+        console.error(err);
         this.snackBar.open('There was an unknown error submitting the form.\
          If this problem persists, please shoot an email to contact@bigtreeworld.com', null, {duration: 5000});
       });

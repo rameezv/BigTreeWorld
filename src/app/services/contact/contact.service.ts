@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable()
 export class ContactService {
-  apiBaseUrl = `https://api.mailgun.net/v3/mg.bigtreeworld.com`;
+  apiBaseUrl = `https://us-central1-bigtreeworld-6f699.cloudfunctions.net`;
 
   constructor(private http: HttpClient) {}
 
@@ -12,7 +12,7 @@ export class ContactService {
       from: `"${fromName}" <${fromEmail}>`,
       to: '"Big Tree World" <contact@bigtreeworld.com>',
       subject: 'Big Tree World contact form submission',
-      html: `Submission on Big Tree World contact form:
+      message: `Submission on Big Tree World contact form:
         <br />
         <hr>
         <ul>
@@ -28,10 +28,7 @@ export class ContactService {
         </ul>
       `
     };
-    const bodyJson = Object.keys(body).map(k => `${encodeURIComponent(k)}=${encodeURIComponent(body[k])}`).join('&');
-    let headers = new HttpHeaders();
-    headers = headers.append('Authorization', 'Basic YXBpOmtleS1lYTFlNTExZTMwM2FmOWY4YmNjODIxMGYzOGRhNjUwYg==');
-    headers = headers.append('Content-Type', 'application/x-www-form-urlencoded');
-    return this.http.post(`${this.apiBaseUrl}/messages`, bodyJson, {headers: headers});
+    const headers = new HttpHeaders({'Content-Type': 'application/json'});
+    return this.http.post(`${this.apiBaseUrl}/httpEmail`, body, {headers: headers});
   }
 }
