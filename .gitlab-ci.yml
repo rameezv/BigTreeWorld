@@ -13,6 +13,7 @@ build:
   artifacts:
     paths:
       - dist/
+      - node_modules/
 
 deploy:
   image: node:latest
@@ -27,6 +28,7 @@ deploy:
   cache:
     paths:
       - dist/
+      - node_modules/
 
 # deploy:
 #   image: appropriate/curl:latest
