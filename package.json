@@ -6,8 +6,9 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "buld-prod": "ng build --prod",
+    "build:prod": "ng build --prod",
     "deploy": "firebase deploy",
+    "deploy:ci": "firebase deploy --token 1/VOKjRztkGrus10NOnKbiKX-hIU2vrItck8_iq-dWhZw",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"

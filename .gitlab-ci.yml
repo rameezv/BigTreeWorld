@@ -6,7 +6,7 @@ build:
   before_script:
     - npm install
   script:
-    - npm run build-prod
+    - npm run build:prod
   cache:
     paths:
       - node_modules/
@@ -23,7 +23,7 @@ deploy:
   dependencies:
     - build
   script:
-    - npm run deploy
+    - npm run deploy:ci
   cache:
     paths:
       - node_modules/
