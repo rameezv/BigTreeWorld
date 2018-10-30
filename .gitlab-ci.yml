@@ -15,9 +15,9 @@ build:
       - node_modules/
       - dist/
 
-build:
+deploy:
   image: node:latest
-  stage: build
+  stage: deploy
   only:
     - master
   dependencies:
