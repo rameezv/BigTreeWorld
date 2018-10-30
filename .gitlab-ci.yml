@@ -5,39 +5,9 @@ deploy:
     - master
   script:
     - npm install -g firebase-tools
-    - npm config set -g production false
     - npm ci
     - npm run build:prod
     - firebase deploy --token $FIREBASE_DEPLOY_KEY
   cache:
     paths:
       - node_modules/
-
-# deploy:
-#   image: node:latest
-#   stage: deploy
-#   only:
-#     - master
-#   dependencies:
-#     - build
-#   script:
-#     - npm install
-#     - npm install -g firebase-tools
-#     - firebase deploy --token $FIREBASE_DEPLOY_KEY
-#   cache:
-#     paths:
-#       - dist/
-
-# deploy:
-#   image: appropriate/curl:latest
-#   stage: deploy
-#   only:
-#     - master
-#   dependencies:
-#     - build
-#   script:
-#     - echo "Generated bundles and assets to upload:"
-#     - cd dist
-#     - ls
-#     - echo "Running curl to upload files via FTP"
-#     - find . -name '*' -type f -exec curl -u $FTP_USERNAME:$FTP_PASSWORD --ftp-create-dirs -T {} ftp://ftp.bigtreeworld.com/{} \;
