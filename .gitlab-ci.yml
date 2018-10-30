@@ -1,6 +1,6 @@
 build:
   image: devillex/docker-firebase
-  stage: build-deploy
+  stage: deploy
   only:
     - master
   before_script:
