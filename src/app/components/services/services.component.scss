@@ -42,10 +42,13 @@
         max-height: 0;
         overflow: hidden;
         padding: 0;
-        transition: 0.2s max-height ease-in-out, 0.2s padding ease-in-out;
+        opacity: 0;
+        transition: 0.2s max-height ease-in-out, 0.2s padding ease-in-out, 0.05s opacity ease-in-out;
         &.expanded {
           max-height: 1000px;
           padding: 0 20px 20px;
+          opacity: 1;
+          transition: 0.2s max-height ease-in-out, 0.2s padding ease-in-out, 0.8s opacity ease-in-out;
         }
       }
     }
