@@ -11,19 +11,19 @@ export class ProjectsComponent {
     {
       title: 'Create Cafe 3D Printing',
       url: 'http://createcafe.ca',
-      imageUrl: '/assets/images/projects/create-cafe.webp',
+      imageUrl: '/assets/images/projects/create-cafe.jpg',
       description: 'A web app for a 3D printing coffee shop in Saskatoon, with an integrated e-commerce store'
     },
     {
       title: 'Moledina Consulting',
       url: 'http://moledinaconsulting.com',
-      imageUrl: '/assets/images/projects/moledina-consulting.webp',
+      imageUrl: '/assets/images/projects/moledina-consulting.png',
       description: 'A simple informational website for a management consulting company'
     },
     {
       title: 'The Montessori Child',
       url: 'http://themontessorichild.com',
-      imageUrl: '/assets/images/projects/tmc.webp',
+      imageUrl: '/assets/images/projects/tmc.png',
       description: 'An informational website for a pre-school with content management'
     }
   ];
