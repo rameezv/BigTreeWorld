@@ -6,7 +6,6 @@ deploy:
   script:
     - npm install -g firebase-tools
     - npm install
-    - npm rebuild node-sass
     - npm run build:prod
     - cd functions
     - npm install
