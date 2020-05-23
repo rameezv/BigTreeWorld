@@ -11,7 +11,7 @@ deploy:
     - cd functions
     - npm install
     - cd ..
-    - firebase deploy --token $FIREBASE_DEPLOY_KEY --project prod
+    - firebase deploy --token $FIREBASE_DEPLOY_KEY
   cache:
     paths:
       - node_modules/
