@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "bigtreeworld-6f699"
+    "default": "bigtreeworld-6f699",
+    "prod": "bigtreeworld-6f699"
   }
 }
