@@ -1,4 +1,4 @@
-@import '~@angular/material/theming';
+@use '@angular/material' as mat;
 
 .service-container {
   text-align: center;
@@ -17,7 +17,7 @@
       width: 100%;
     }
     .service {
-      background-color: mat-color($mat-grey, 300);
+      background-color: mat.get-color-from-palette(mat.$grey-palette, 300);
       border-radius: 24px;
       margin: 10px 0;
       transition: 0.2s opacity ease-in-out;
@@ -32,8 +32,8 @@
         cursor: pointer;
         padding: 0 10px;
         mat-icon.service-icon {
-          background-color: mat-color($mat-green, 600);
-          color: mat-color($mat-grey, 100);
+          background-color: mat.get-color-from-palette(mat.$green-palette, 600);
+          color: mat.get-color-from-palette(mat.$grey-palette, 100);
           border-radius: 50%;
           padding: 8px;
         }
