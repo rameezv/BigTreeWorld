@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, FormControl, Validators, FormGroupDirective } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, UntypedFormControl, Validators, FormGroupDirective } from '@angular/forms';
 import { ContactService } from '../../services/contact/contact.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
@@ -9,20 +9,20 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   styleUrls: ['./contact.component.scss']
 })
 export class ContactComponent implements OnInit {
-  form: FormGroup;
+  form: UntypedFormGroup;
   reCaptchaSiteKeyEncrypted = 'NkxjclZYY1VBQUFBQVAxWTlhMXpxTHBmc1FxVXJNNTlERF9Tclc0YQ==';
   reCaptchaSiteKey: string;
   formSubmitting = false;
 
-  constructor(private fb: FormBuilder, private contactService: ContactService, private snackBar: MatSnackBar) {}
+  constructor(private fb: UntypedFormBuilder, private contactService: ContactService, private snackBar: MatSnackBar) {}
   ngOnInit() {
     this.reCaptchaSiteKey = window.atob(this.reCaptchaSiteKeyEncrypted);
     this.form = this.fb.group({
-      'name': new FormControl(null, Validators.required),
-      'email': new FormControl(null, [Validators.email, Validators.required]),
-      'phone': new FormControl(null, Validators.pattern(/^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/)),
-      'message': new FormControl(null, Validators.required),
-      'recaptcha': new FormControl(null, Validators.required)
+      'name': new UntypedFormControl(null, Validators.required),
+      'email': new UntypedFormControl(null, [Validators.email, Validators.required]),
+      'phone': new UntypedFormControl(null, Validators.pattern(/^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/)),
+      'message': new UntypedFormControl(null, Validators.required),
+      'recaptcha': new UntypedFormControl(null, Validators.required)
     });
   }
 
