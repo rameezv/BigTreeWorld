@@ -1,4 +1,4 @@
-@import '~@angular/material/theming';
+@use '~@angular/material' as mat;
 
 .header-bar {
     width: 100%;
@@ -8,7 +8,7 @@
     padding: 0 20px;
     align-items: center;
     background-color: rgba(245, 245, 245, 1);
-    border-bottom: 2px solid mat-color($mat-green, 600);
+    border-bottom: 2px solid mat.get-color-from-palette(mat.$green-palette, 600);
     color: #000000;
     box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.2);
     z-index: 10;
@@ -47,13 +47,13 @@
         height: 100px;
         border: 0px solid transparent;
         .logo {
-            text-shadow: 0 2px 1px mat-color($mat-grey, 900);
+            text-shadow: 0 2px 1px mat.get-color-from-palette(mat.$grey-palette, 900);
             font-size: 32px;
             img {
                 width: 48px;
                 height: 48px;
                 margin-right: 20px;
-                box-shadow: 0 2px 1px mat-color($mat-grey, 900);
+                box-shadow: 0 2px 1px mat.get-color-from-palette(mat.$grey-palette, 900);
             }
         }
     }

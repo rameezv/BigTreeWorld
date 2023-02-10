@@ -1,4 +1,4 @@
-@import '~@angular/material/theming';
+@use '~@angular/material' as mat;
 
 .container {
   width: 60%;
@@ -33,7 +33,7 @@
         background-size: cover;
         background-position: center center;
         border-radius: 50%;
-        border: 1px solid mat-color($mat-grey, 300);
+        border: 1px solid mat.get-color-from-palette(mat.$grey-palette, 300);
         animation: pulse 2s infinite;
       }
       h3 {
